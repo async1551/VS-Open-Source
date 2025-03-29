@@ -1,5 +1,5 @@
 {
-    "protected_roles": [1339645146345508905],
-    "allowed_roles": [1339645112875221115],
-    "log_channel": 1354865637771706536
+    "protected_roles": [1339645146345508905], #add the ID of the roles u want to protect
+    "allowed_roles": [1339645112875221115], #add the whitelisted role's ID here
+    "log_channel": 1354865637771706536 #add the log channel ID here
 }
