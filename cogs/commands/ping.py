@@ -32,7 +32,7 @@ class PingCog(commands.Cog):
             embed.add_field(name="Uptime", value=f"{formatted_uptime}", inline=True)
             embed.add_field(name="Shards", value=shard_info, inline=True)
             embed.add_field(name="Bot Status", value=str(status), inline=True)
-            embed.set_footer(text=f"dsc.gg/vsociety | Join Now!", icon_url=interaction.user.avatar.url if interaction.user.avatar else None)
+            embed.set_footer(text=f"discord.gg/vsociety | Join Now!", icon_url=interaction.user.avatar.url if interaction.user.avatar else None)
             embed.set_thumbnail(url=self.bot.user.avatar.url if self.bot.user.avatar else None)
 
             await interaction.edit_original_response(content=None, embed=embed)
