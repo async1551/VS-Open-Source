@@ -1,4 +1,4 @@
-# VSociety Open Source
+# Vice City
 
 A lightweight and simplified version of my main Discord bot, built using `discord.py`. This bot provides basic moderation, role management, and protection systems while maintaining minimal dependencies and an easy-to-configure setup.
 
