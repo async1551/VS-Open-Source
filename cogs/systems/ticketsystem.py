@@ -46,18 +46,14 @@ class CloseTicket(discord.ui.View):
             name=button.guild.name,
             icon_url=button.guild.icon.url if button.guild.icon.url else None
         )
-        embed = discord.Embed(
-            description="This ticket closes in 5 seconds",
+        now = int(datetime.now().timestamp())
+        close_timestamp = now + 300 # 5 minutes
+        embed2 = discord.Embed(
+            description=f"This ticket closes in <t:{close_timestamp}:R>",
             colour=discord.Colour.dark_red()
         )
-        countdownmessage = await button.channel.send(embed=embed)
-        for i in range(4, 0, -1):
-            await asyncio.sleep(1)
-            embed2 = discord.Embed(
-                description=f"This ticket closes in {i} seconds",
-                colour=discord.Colour.dark_red()
-            )
-            await countdownmessage.edit(embed=embed2)
+        await button.channel.send(embed=embed2)
+        await asyncio.sleep(5)
         await logschannel.send(embed=logsembed)
         await button.channel.delete()
 
