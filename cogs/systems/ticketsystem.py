@@ -14,7 +14,7 @@ class CloseTicket(discord.ui.View):
         style = discord.ButtonStyle.danger
     )
     async def closeticket(self, button: discord.ui.Button, interaction: discord.Interaction):
-        logschannel = button.guild.get_channel(1358475528100905211) # ADD YOUR LOGS CHANNEL ID HERE
+        logschannel = button.guild.get_channel(1358475528100905211) # add your channel id here
         ticketownerid = button.channel.topic
         ticketowner = button.guild.get_member(int(ticketownerid)) if ticketownerid else None
         logsembed = discord.Embed(
@@ -40,14 +40,14 @@ class CloseTicket(discord.ui.View):
         )
         logsembed.add_field(
             name="Closed Date",
-            value=f"<t:{int(button.created_at.timestamp())}:F>"
+            value=f"<t:{int(button.created_at.timestamp())}:F>" #check more info here: https://github.com/bsoyka/discord-timestamps/wiki
         )
         logsembed.set_author(
             name=button.guild.name,
             icon_url=button.guild.icon.url if button.guild.icon.url else None
         )
         now = int(datetime.now().timestamp())
-        close_timestamp = now + 300 # 5 minutes
+        close_timestamp = now + 300 # 5 minutes, you can change it n1gga
         embed2 = discord.Embed(
             description=f"This ticket closes in <t:{close_timestamp}:R>",
             colour=discord.Colour.dark_red()
@@ -67,9 +67,9 @@ class TicketView(discord.ui.View):
         style = discord.ButtonStyle.gray
     )
     async def buttonpress(self, button: discord.ui.Button, interaction: discord.Interaction):
-        staffrole = button.guild.get_role(1353463688471908432) # ADD YOUR STAFF ROLE ID HERE
-        ticketcategory = button.guild.get_channel(1358475281815568485) # ADD YOUR TICKETS CATEGORY ID HERE
-        logschannel = button.guild.get_channel(1358475528100905211) # ADD YOUR LOGS CHANNEL ID HERE
+        staffrole = button.guild.get_role(1353463688471908432) # add your staff role id here
+        ticketcategory = button.guild.get_channel(1358475281815568485) #add your tickets category id here
+        logschannel = button.guild.get_channel(1358475528100905211) #add your logs channel id here
         overwrites = {
             button.guild.default_role: discord.PermissionOverwrite(view_channel=False, read_messages=False),
             button.user: discord.PermissionOverwrite(view_channel=True, read_messages=True, send_messages=True),
