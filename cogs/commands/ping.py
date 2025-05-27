@@ -26,13 +26,13 @@ class PingCog(commands.Cog):
             uptime_seconds = int((datetime.now() - self.start_time).total_seconds())
             formatted_uptime = str(timedelta(seconds=uptime_seconds))
 
-            embed = discord.Embed(title="VSociety", color=discord.Color.blurple())
+            embed = discord.Embed(title="Vibe City", color=discord.Color.blurple())
             embed.add_field(name="Ping", value=f"{latency}", inline=True)
             embed.add_field(name="RAM Usage", value=f"{ram_usage:.2f} MB", inline=True)
             embed.add_field(name="Uptime", value=f"{formatted_uptime}", inline=True)
             embed.add_field(name="Shards", value=shard_info, inline=True)
             embed.add_field(name="Bot Status", value=str(status), inline=True)
-            embed.set_footer(text=f"discord.gg/vsociety | Join Now!", icon_url=interaction.user.avatar.url if interaction.user.avatar else None)
+            embed.set_footer(text=f"dsc.gg/vicecityn1 | Join Now!", icon_url=interaction.user.avatar.url if interaction.user.avatar else None)
             embed.set_thumbnail(url=self.bot.user.avatar.url if self.bot.user.avatar else None)
 
             await interaction.edit_original_response(content=None, embed=embed)
